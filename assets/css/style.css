@@ -460,6 +460,7 @@ input {
     #banner .left-b-side {
         align-items: flex-start;
         padding-left: 15px;
+        padding-top:20px;
     }
 
     #banner .right-b-side .img-wrapper {
