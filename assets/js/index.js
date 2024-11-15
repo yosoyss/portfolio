@@ -71,6 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const skillItems = skills[skillCategory];
 
         progressBars.forEach((progressBar, index) => {
+            // Reset progress bar and percentage text to 0% before animation starts
+            progressBar.style.width = '0%';
+            progressPercentages[index].textContent = '0%';
+
             const skillPercentage = skillItems[index]?.percentage;
             if (skillPercentage !== undefined) {
                 let currentPercentage = 0;
@@ -128,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (section.classList.contains(targetSection)) {
                         // section.classList.add('display-block');
                         section.classList.remove('display-none');
-                        // animateProgressBars(targetSection);
+                        animateProgressBars(targetSection);
                     } else {
                         // section.classList.remove('display-block');
                         section.classList.add('display-none');
@@ -164,44 +168,56 @@ document.addEventListener('DOMContentLoaded', () => {
 // Wait until DOM is fully loaded before attaching event listeners
 document.addEventListener('DOMContentLoaded', () => {
     const scrollUpBtn = document.getElementById('scrollUpBtn');
-  
+
     // Show the button when scrolling down
     window.onscroll = function () {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollUpBtn.style.display = "block"; // Show button
-      } else {
-        scrollUpBtn.style.display = "none"; // Hide button
-      }
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollUpBtn.style.display = "block"; // Show button
+        } else {
+            scrollUpBtn.style.display = "none"; // Hide button
+        }
     };
-  
+
     // Scroll to top when clicked
-// Scroll to top with smooth scrolling when clicked
-scrollUpBtn.onclick = function () {
-    // Scroll duration (in milliseconds)
-    const duration = 500; // Change this for a slower or faster scroll, e.g., 1500ms = 1.5 seconds
-    const start = window.scrollY; // Initial scroll position
-    const end = 0; // Target scroll position (top of the page)
-    const change = start - end; // Difference in scroll
-    let startTime = null;
-  
-    // Function to handle smooth scrolling
-    function scrollToTop(timestamp) {
-      if (!startTime) startTime = timestamp; // Record the start time
-      const progress = timestamp - startTime; // Time elapsed since start
-      const scrollStep = progress / duration; // Calculate how much to scroll per frame
-  
-      if (progress < duration) {
-        // Scroll to the current position based on progress
-        window.scrollTo(0, start - (scrollStep * change)); 
-        requestAnimationFrame(scrollToTop); // Continue scrolling
-      } else {
-        // Ensure we reach the exact top of the page
-        window.scrollTo(0, end);
-      }
-    }
-  
-    // Start the smooth scroll animation
-    requestAnimationFrame(scrollToTop);
-  };
-  });
-  
+    // Scroll to top with smooth scrolling when clicked
+    scrollUpBtn.onclick = function () {
+        // Scroll duration (in milliseconds)
+        const duration = 500; // Change this for a slower or faster scroll, e.g., 1500ms = 1.5 seconds
+        const start = window.scrollY; // Initial scroll position
+        const end = 0; // Target scroll position (top of the page)
+        const change = start - end; // Difference in scroll
+        let startTime = null;
+
+        // Function to handle smooth scrolling
+        function scrollToTop(timestamp) {
+            if (!startTime) startTime = timestamp; // Record the start time
+            const progress = timestamp - startTime; // Time elapsed since start
+            const scrollStep = progress / duration; // Calculate how much to scroll per frame
+
+            if (progress < duration) {
+                // Scroll to the current position based on progress
+                window.scrollTo(0, start - (scrollStep * change));
+                requestAnimationFrame(scrollToTop); // Continue scrolling
+            } else {
+                // Ensure we reach the exact top of the page
+                window.scrollTo(0, end);
+            }
+        }
+
+        // Start the smooth scroll animation
+        requestAnimationFrame(scrollToTop);
+    };
+
+    //   scroll behaviour of links
+    document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", function () {
+            const target = document.querySelector(this.getAttribute("data-target"));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+

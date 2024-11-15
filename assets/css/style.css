@@ -3,7 +3,7 @@
     margin: 0;
     user-select: none;
     box-sizing: border-box;
-    font-family:"Open Sans",sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 /* body { */
@@ -17,8 +17,8 @@
     --mute-text: #5A5A5A;
 }
 
-/* a fixed button */    
-.fixed-btn{
+/* a fixed button */
+.fixed-btn {
     padding: 8px;
     width: 60px;
     height: 60px;
@@ -32,8 +32,7 @@
     background-color: var(--secondary-color);
 }
 
-.banner-btn button{
-    display: inline-block;
+.banner-btn button {
     font-weight: 400;
     line-height: 1.5;
     color: #ffffff;
@@ -50,6 +49,11 @@
     border-color: var(--secondary-color);
     border-radius: 10px;
 }
+
+.banner-btn button:hover {
+    margin-left: 10px;
+}
+
 /* nav bar starts here */
 #nav {
     display: flex;
@@ -148,7 +152,7 @@
     letter-spacing: 1.2px;
     background-color: var(--primary-color);
     color: var(--text-color);
-    height: 95vh;
+    min-height: 90vh;
     padding: 30px 60px;
 }
 
@@ -162,6 +166,7 @@
     display: flex;
     height: inherit;
     width: 50%;
+    min-width: 300px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -186,6 +191,8 @@
     display: flex;
     height: inherit;
     width: 50%;
+    height: auto;
+    /* min-width: 500px; */
     flex-direction: column;
     align-items: center;
 
@@ -193,8 +200,8 @@
 }
 
 #banner .right-b-side img {
-    height: 700px;
-    width: 700px;
+    height: auto;
+    width: 100%;
 }
 
 
@@ -233,7 +240,7 @@
 #aboutCont .aboutMe p {
     margin-top: 15px;
     font-size: 1rem;
-    font-family:"Open Sans",sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: var(--mute-text);
     font-weight: 400;
     line-height: 1.5;
@@ -248,7 +255,7 @@
     padding: 70px 20px;
     display: flex;
     letter-spacing: 1px;
-    height: 80vh;
+    /* height: 90vh; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -262,11 +269,12 @@
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    width: 30%;
+    width: 45%;
     justify-content: space-evenly;
 }
 
 .skillsBtn>div {
+    margin-top: 8px;
     padding: 8px 20px;
     border-radius: 50px;
     color: var(--secondary-color);
@@ -285,7 +293,7 @@
     display: flex;
     margin-top: 50px;
     width: 60%;
-    height: 250px;
+    /* height: 250px; */
     flex-wrap: wrap;
 }
 
@@ -323,12 +331,8 @@
 .progress {
     height: inherit;
     width: 0;
-    /* Start at 0 width for animation */
     border-radius: 50px;
     background-color: #ff0000;
-    /* Default color, will be set dynamically */
-    transition: width 1s ease-in-out;
-    /* Smooth transition for width */
 }
 
 
@@ -372,7 +376,6 @@ input {
     border-radius: 8px;
     border: 1px solid;
     margin-top: 10px;
-    /* padding: .375rem .75rem; */
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 1px;
@@ -417,7 +420,7 @@ input {
 }
 
 /* footer */
-#footer{
+#footer {
     height: 180px;
     width: 100%;
     display: flex;
@@ -431,11 +434,24 @@ input {
 }
 
 /* media query for mobile */
+/* more than 1000 px media query */
+@media (max-width: 1300px) {
+    .skills, .box{
+        justify-content: center;
+    }
+
+    #banner{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+}
 /* Mobile-specific styles */
 @media (max-width: 768px) {
-    #blink{
+    #blink {
         height: 28px;
     }
+
     #banner-parent {
         padding-top: 100px;
         padding-left: 10px;
@@ -444,36 +460,37 @@ input {
 
     #banner {
         flex-direction: column;
-        /* Stacks text above image */
         height: auto;
-        /* Adjust height for mobile */
         width: 100%;
     }
 
     #banner .left-b-side,
     #banner .right-b-side {
         width: 100%;
-        /* Make both sections full-width on mobile */
         height: auto;
     }
 
     #banner .left-b-side {
         align-items: flex-start;
         padding-left: 15px;
-        padding-top:40px;
+        margin-top: 30px;
     }
 
     #banner .right-b-side .img-wrapper {
         padding: 0px;
-        /* Adds padding around the image */
+    }
+
+    #banner .right-b-side img {
+        margin-top: 30px;
     }
 
 
     #banner .left-b-side span {
-        font-size: calc(1.225rem + 1.3vw);
+        font-size: calc(1.215rem + 1.3vw);
     }
 
     #banner .left-b-side div {
+        margin-top: 5px;
         font-size: calc(1.325rem + .9vw);
     }
 
@@ -507,8 +524,8 @@ input {
         width: 100%;
     }
 
-    #skillsContainer{
-        height: 100vh;
+    #skillsContainer {
+        height: 850px;
     }
 
     .skillsBtn {
@@ -546,29 +563,33 @@ input {
 
     #nav>#menu {
         display: none;
-        /* Hide regular navbar links */
     }
 
     .nav-links {
         display: none;
-        /* Hide regular navbar links */
     }
 
     .hamburger {
         display: block !important;
-        /* Show hamburger menu */
     }
 
     /* contact */
-    #form{
+    #form {
         width: 100%;
         padding: 10px;
     }
-    .form-control{
+
+    .form-control {
         flex-direction: column;
     }
-    #form button{
+
+    #form button {
         width: 100%;
+    }
+
+    .banner-btn button {
+        padding: 8px 12px;
+        font-size: 1.1rem;
     }
 }
 
