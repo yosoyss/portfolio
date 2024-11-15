@@ -26,7 +26,7 @@
     position: fixed;
     border-radius: 50%;
     border: none;
-    bottom: 10%;
+    bottom: 8%;
     right: 1.5%;
     color: #FFF;
     background-color: var(--secondary-color);
@@ -501,7 +501,7 @@ input {
 /* Mobile-specific styles */
 @media (max-width: 768px) {
     #blink {
-        height: 28px;
+        height: 30px;
     }
 
     #banner-parent {
