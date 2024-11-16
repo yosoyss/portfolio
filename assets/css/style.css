@@ -6,12 +6,12 @@
     font-family: "Open Sans", sans-serif;
 }
 
-/* body { */
-/* background-color: red; */
-/* } */
+body { 
+    font-family: "Open Sans", sans-serif;
+}
 
 :root {
-    --primary-color: #1E3E62;
+    --primary-color: #0C0820;
     --secondary-color: #4A76FD;
     --text-color: white;
     --mute-text: #5A5A5A;
@@ -269,7 +269,7 @@
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    width: 45%;
+    width: 37%;
     justify-content: space-evenly;
 }
 
@@ -384,13 +384,15 @@
     font-size: 1.5rem;
     height: 45px;
     width: 45px;
+    margin: 10px 3px;
+    box-shadow: 4px 4px 8px 0px #e9e9e9;
     padding: 10px;
     text-align: center;
     vertical-align: middle;
     border-radius: 50px;
     align-self: center;
     color: black;
-    background-color: #eaeaec;
+    background-color: #fff;
 }
 
 #form {
@@ -538,16 +540,16 @@ input {
 
 
     #banner .left-b-side span {
-        font-size: calc(1.215rem + 1.3vw);
+        font-size: calc(1.215rem + .6vw);
     }
 
     #banner .left-b-side div {
         margin-top: 5px;
-        font-size: calc(1.325rem + .9vw);
+        font-size: calc(1.325rem + .5vw);
     }
 
     #banner .left-b-side p {
-        font-size: calc(1.525rem + 3.3vw);
+        font-size: calc(1.525rem + 2.3vw);
     }
 
     #banner .right-b-side {
@@ -563,6 +565,8 @@ input {
     }
 
     #aboutCont {
+        margin-top: 25px;
+        letter-spacing: 0.5px;
         flex-direction: column-reverse;
     }
 
@@ -582,7 +586,7 @@ input {
 
     .skillsBtn {
         width: 100%;
-        gap: 10px;
+        gap: 5px;
         padding: 10px;
     }
 
@@ -641,7 +645,7 @@ input {
 
     .banner-btn button {
         padding: 8px 12px;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .social-container, .social{
