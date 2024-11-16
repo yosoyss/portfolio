@@ -99,6 +99,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    text-align: center;
     height: 100%;
     background-color: rgba(162, 162, 162, 0.9);
     backdrop-filter: blur(10px);
