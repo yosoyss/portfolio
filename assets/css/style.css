@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif !important;
 }
 
 :root {
@@ -274,9 +274,10 @@ body {
     color: var(--mute-text);
     width: 60%;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 40px;
     text-align: justify;
+    line-height: 1.5;
 }
 
 .skillsBtn {
@@ -369,6 +370,10 @@ body {
     width: 70%;
 }
 
+a{
+    text-decoration: none !important;
+}
+
 .projectTitle h1 {
     font-size: 42px;
 }
@@ -391,6 +396,7 @@ body {
 .project-box {
     height: 315px;
     width: 340px;
+    text-decoration: none;
     background-color: #fff;
     letter-spacing: 0.3px;
     border-radius: 14px;
@@ -407,6 +413,7 @@ body {
 
 .project-data {
     padding: 20px;
+    color: #000000;
 }
 
 .project-data .project-title {

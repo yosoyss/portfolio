@@ -153,12 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // nav
     const hamburger = document.getElementById('hamburger');
     const overlay = document.getElementById('overlay');
+    const close = document.getElementById('close');
 
     hamburger.addEventListener('click', () => {
         overlay.classList.toggle('active'); // Toggle overlay visibility
     });
 
-    overlay.addEventListener('click', () => {
+    close.addEventListener('click', () => {
         overlay.classList.remove('active'); // Close overlay on click
     });
 });
