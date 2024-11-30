@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: "Lunacy", percentage: 55, color: "#149BE2", lightColor: "#D6EEF9", logoUrl: "../assets/logo/lunacy.jpeg" },
         ],
     };
-    
+
 
     function animateProgressBars(skillCategory) {
         const container = document.getElementById(skillCategory + 'Container');
@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const overlay = document.getElementById('overlay');
     const close = document.getElementById('close');
+    const navLinks = document.querySelectorAll('.nav-link');
 
     hamburger.addEventListener('click', () => {
         overlay.classList.toggle('active'); // Toggle overlay visibility
@@ -161,6 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     close.addEventListener('click', () => {
         overlay.classList.remove('active'); // Close overlay on click
+    });
+
+    // Close overlay when clicking on nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            overlay.classList.remove('active'); // Close overlay
+        });
     });
 });
 
