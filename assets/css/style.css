@@ -227,7 +227,7 @@ body {
 
 #aboutCont .aboutMe {
     /* height: 700px; */
-    padding: 50px 20px;
+    padding: 50px 25px;
     line-height: 1.5;
     letter-spacing: 1.3px;
     width: 600px;
@@ -245,7 +245,7 @@ body {
     color: var(--mute-text);
     font-weight: 400;
     line-height: 1.5;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 /* ***********************SKills*********************** */
@@ -899,6 +899,10 @@ input {
         width: 100%;
         margin-right: auto;
         font-size: 30px;
+    }
+
+    #footer{
+        font-size: 14px;
     }
 }
 
