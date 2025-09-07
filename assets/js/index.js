@@ -38,27 +38,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const skills = {
         frontend: [
             { name: "HTML", percentage: 99, color: "#E54D26", lightColor: "#FAD8C9", logoUrl: "./assets/logo/html.jpg" },
-            { name: "CSS", percentage: 98, color: "#3799D6", lightColor: "#D8EEF9", logoUrl: "/assets/logo/css.jpg" },
-            { name: "JavaScript", percentage: 80, color: "#F4E11E", lightColor: "#FFFBE0", logoUrl: "assets/logo/js.jpg" },
-            { name: "React", percentage: 75, color: "#61dafb", lightColor: "#DFF8FF", logoUrl: "../assets/logo/react.jpg" },
-            { name: "React Native", percentage: 70, color: "#4a90e2", lightColor: "#D0E5FA", logoUrl: "../assets/logo/react.jpg" },
-            { name: "Bootstrap", percentage: 85, color: "#7211F6", lightColor: "#E5D3FF", logoUrl: "../assets/logo/bootstrap.jpg" },
+            { name: "CSS", percentage: 98, color: "#3799D6", lightColor: "#D8EEF9", logoUrl: "./assets/logo/css.jpg" },
+            { name: "JavaScript", percentage: 80, color: "#F4E11E", lightColor: "#FFFBE0", logoUrl: "./assets/logo/js.jpg" },
+            { name: "React", percentage: 75, color: "#61dafb", lightColor: "#DFF8FF", logoUrl: "./assets/logo/react.jpg" },
+            { name: "React Native", percentage: 70, color: "#4a90e2", lightColor: "#D0E5FA", logoUrl: "./assets/logo/react.jpg" },
+            { name: "Bootstrap", percentage: 85, color: "#7211F6", lightColor: "#E5D3FF", logoUrl: "./assets/logo/bootstrap.jpg" },
         ],
         backend: [
-            { name: "Python", percentage: 70, color: "#3670A0", lightColor: "#D6E4F0", logoUrl: " ../assets/logo/python.jpeg" },
-            { name: "Node.js", percentage: 70, color: "#89C142", lightColor: "#E5F6D7", logoUrl: "../assets/logo/nodejs.jpeg" },
-            { name: "SQL", percentage: 70, color: "#4479A1", lightColor: "#D6E7F0", logoUrl: "../assets/logo/sql.jpeg" },
-            { name: "PHP", percentage: 50, color: "#8792BF", lightColor: "#E8EBF7", logoUrl: "../assets/logo/php.jpg" },
+            { name: "Python", percentage: 70, color: "#3670A0", lightColor: "#D6E4F0", logoUrl: " ./assets/logo/python.jpeg" },
+            { name: "Node.js", percentage: 70, color: "#89C142", lightColor: "#E5F6D7", logoUrl: "./assets/logo/nodejs.jpeg" },
+            { name: "SQL", percentage: 70, color: "#4479A1", lightColor: "#D6E7F0", logoUrl: "./assets/logo/sql.jpeg" },
+            { name: "PHP", percentage: 50, color: "#8792BF", lightColor: "#E8EBF7", logoUrl: "./assets/logo/php.jpg" },
         ],
         programming: [
-            { name: "C", percentage: 60, color: "#01A0E4", lightColor: "#D1EEFA", logoUrl: "../assets/logo/c.jpeg" },
-            { name: "C++", percentage: 55, color: "#1F6AA4", lightColor: "#D6E6F4", logoUrl: "../assets/logo/cpp.jpeg" },
+            { name: "C", percentage: 60, color: "#01A0E4", lightColor: "#D1EEFA", logoUrl: "./assets/logo/c.jpeg" },
+            { name: "C++", percentage: 55, color: "#1F6AA4", lightColor: "#D6E6F4", logoUrl: "./assets/logo/cpp.jpeg" },
         ],
         tools: [
-            { name: "Photoshop", percentage: 60, color: "#001025", lightColor: "#CDD4DF", logoUrl: "../assets/logo/photoshop.jpeg" },
-            { name: "Illustator", percentage: 55, color: "#2D1012", lightColor: "#E7C7C9", logoUrl: "../assets/logo/illustator.jpeg" },
-            { name: "Lightroom", percentage: 55, color: "#001025", lightColor: "#CDD4DF", logoUrl: "../assets/logo/lightroom.jpeg" },
-            { name: "Lunacy", percentage: 55, color: "#149BE2", lightColor: "#D6EEF9", logoUrl: "../assets/logo/lunacy.jpeg" },
+            { name: "Photoshop", percentage: 60, color: "#001025", lightColor: "#CDD4DF", logoUrl: "./assets/logo/photoshop.jpeg" },
+            { name: "Illustator", percentage: 55, color: "#2D1012", lightColor: "#E7C7C9", logoUrl: "./assets/logo/illustator.jpeg" },
+            { name: "Lightroom", percentage: 55, color: "#001025", lightColor: "#CDD4DF", logoUrl: "./assets/logo/lightroom.jpeg" },
+            { name: "Lunacy", percentage: 55, color: "#149BE2", lightColor: "#D6EEF9", logoUrl: "./assets/logo/lunacy.jpeg" },
         ],
     };
 
@@ -228,5 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
 
