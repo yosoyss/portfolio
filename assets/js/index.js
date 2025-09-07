@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const skills = {
         frontend: [
-            { name: "HTML", percentage: 99, color: "#E54D26", lightColor: "#FAD8C9", logoUrl: "../assets/logo/html.jpg" },
-            { name: "CSS", percentage: 98, color: "#3799D6", lightColor: "#D8EEF9", logoUrl: "../assets/logo/css.jpg" },
-            { name: "JavaScript", percentage: 80, color: "#F4E11E", lightColor: "#FFFBE0", logoUrl: "../assets/logo/js.jpg" },
+            { name: "HTML", percentage: 99, color: "#E54D26", lightColor: "#FAD8C9", logoUrl: "./assets/logo/html.jpg" },
+            { name: "CSS", percentage: 98, color: "#3799D6", lightColor: "#D8EEF9", logoUrl: "/assets/logo/css.jpg" },
+            { name: "JavaScript", percentage: 80, color: "#F4E11E", lightColor: "#FFFBE0", logoUrl: "assets/logo/js.jpg" },
             { name: "React", percentage: 75, color: "#61dafb", lightColor: "#DFF8FF", logoUrl: "../assets/logo/react.jpg" },
             { name: "React Native", percentage: 70, color: "#4a90e2", lightColor: "#D0E5FA", logoUrl: "../assets/logo/react.jpg" },
             { name: "Bootstrap", percentage: 85, color: "#7211F6", lightColor: "#E5D3FF", logoUrl: "../assets/logo/bootstrap.jpg" },
@@ -228,4 +228,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
