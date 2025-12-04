@@ -256,7 +256,7 @@ body {
     padding: 70px 20px;
     display: flex;
     letter-spacing: 1px;
-    height: auto;
+    height: max-content;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -779,7 +779,7 @@ input {
     }
 
     #skillsContainer {
-        height: 1500px;
+        min-height: fit-content !important;
     }
 
     .skillsBtn {
@@ -867,13 +867,13 @@ input {
         text-align: center;
     }
 
-    #skillsContainer{
+    /* #skillsContainer{
         height: auto;
-    }
+    } */
 
     /* ------PROJECTS----- */
     .projectSection{
-        margin-top: 150px;
+        margin-top: 40px;
     }
     .projects {
         width: 100%;
@@ -924,7 +924,7 @@ input {
     .projectTitle h1,
     .social h1 {
         text-align: left;
-        padding: 20px;
+        padding: 20px 0px;
         width: 100%;
         margin-right: auto;
         font-size: 30px;
