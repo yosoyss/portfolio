@@ -33,123 +33,112 @@ function textAnimation() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    textAnimation(); // Initialize typing animation
-
+    textAnimation();
+    // Your original data – unchanged
     const skills = {
         frontend: [
-            { name: "HTML", percentage: 99, color: "#E54D26", lightColor: "#FAD8C9", logoUrl: "./assets/logo/html.jpg" },
-            { name: "CSS", percentage: 98, color: "#3799D6", lightColor: "#D8EEF9", logoUrl: "./assets/logo/css.jpg" },
-            { name: "JavaScript", percentage: 80, color: "#F4E11E", lightColor: "#FFFBE0", logoUrl: "./assets/logo/js.jpg" },
-            { name: "React", percentage: 75, color: "#61dafb", lightColor: "#DFF8FF", logoUrl: "./assets/logo/react.jpg" },
-            { name: "React Native", percentage: 70, color: "#4a90e2", lightColor: "#D0E5FA", logoUrl: "./assets/logo/react.jpg" },
-            { name: "Bootstrap", percentage: 85, color: "#7211F6", lightColor: "#E5D3FF", logoUrl: "./assets/logo/bootstrap.jpg" },
+            { name: "HTML", percentage: 99, color: "#E54D26", lightColor: "#FAD8C9", logoUrl: "assets/logo/html.jpg" },
+            { name: "CSS", percentage: 98, color: "#3799D6", lightColor: "#D8EEF9", logoUrl: "assets/logo/css.jpg" },
+            { name: "JavaScript", percentage: 80, color: "#F4E11E", lightColor: "#FFFBE0", logoUrl: "assets/logo/js.jpg" },
+            { name: "React", percentage: 75, color: "#61dafb", lightColor: "#DFF8FF", logoUrl: "assets/logo/react.jpg" },
+            { name: "React Native", percentage: 70, color: "#4a90e2", lightColor: "#D0E5FA", logoUrl: "assets/logo/react.jpg" },
+            { name: "Bootstrap", percentage: 85, color: "#7211F6", lightColor: "#E5D3FF", logoUrl: "assets/logo/bootstrap.jpg" },
+            { name: "Tailwind CSS", percentage: 70, color: "#18B7B9", lightColor: "#DCF6F6", logoUrl: "assets/logo/tailwind css.jpeg" },
         ],
         backend: [
-            { name: "Python", percentage: 70, color: "#3670A0", lightColor: "#D6E4F0", logoUrl: " ./assets/logo/python.jpeg" },
-            { name: "Node.js", percentage: 70, color: "#89C142", lightColor: "#E5F6D7", logoUrl: "./assets/logo/nodejs.jpeg" },
-            { name: "SQL", percentage: 70, color: "#4479A1", lightColor: "#D6E7F0", logoUrl: "./assets/logo/sql.jpeg" },
-            { name: "PHP", percentage: 50, color: "#8792BF", lightColor: "#E8EBF7", logoUrl: "./assets/logo/php.jpg" },
+            { name: "Python", percentage: 70, color: "#3670A0", lightColor: "#D6E4F0", logoUrl: "assets/logo/python.jpeg" },
+            { name: "Node.js", percentage: 70, color: "#89C142", lightColor: "#E5F6D7", logoUrl: "assets/logo/nodejs.jpeg" },
+            { name: "SQL", percentage: 70, color: "#4479A1", lightColor: "#D6E7F0", logoUrl: "assets/logo/sql.jpeg" },
+            { name: "PHP", percentage: 50, color: "#8792BF", lightColor: "#E8EBF7", logoUrl: "assets/logo/php.jpg" },
         ],
         programming: [
-            { name: "C", percentage: 60, color: "#01A0E4", lightColor: "#D1EEFA", logoUrl: "./assets/logo/c.jpeg" },
-            { name: "C++", percentage: 55, color: "#1F6AA4", lightColor: "#D6E6F4", logoUrl: "./assets/logo/cpp.jpeg" },
+            { name: "C", percentage: 60, color: "#01A0E4", lightColor: "#D1EEFA", logoUrl: "assets/logo/c.jpeg" },
+            { name: "C++", percentage: 55, color: "#1F6AA4", lightColor: "#D6E6F4", logoUrl: "assets/logo/cpp.jpeg" },
         ],
         tools: [
-            { name: "Photoshop", percentage: 60, color: "#001025", lightColor: "#CDD4DF", logoUrl: "./assets/logo/photoshop.jpeg" },
-            { name: "Illustator", percentage: 55, color: "#2D1012", lightColor: "#E7C7C9", logoUrl: "./assets/logo/illustator.jpeg" },
-            { name: "Lightroom", percentage: 55, color: "#001025", lightColor: "#CDD4DF", logoUrl: "./assets/logo/lightroom.jpeg" },
-            { name: "Lunacy", percentage: 55, color: "#149BE2", lightColor: "#D6EEF9", logoUrl: "./assets/logo/lunacy.jpeg" },
+            { name: "Photoshop", percentage: 60, color: "#001025", lightColor: "#CDD4DF", logoUrl: "assets/logo/photoshop.jpeg" },
+            { name: "Illustator", percentage: 55, color: "#2D1012", lightColor: "#E7C7C9", logoUrl: "assets/logo/illustator.jpeg" },
+            { name: "Lightroom", percentage: 55, color: "#001025", lightColor: "#CDD4DF", logoUrl: "assets/logo/lightroom.jpeg" },
+            { name: "Lunacy", percentage: 55, color: "#149BE2", lightColor: "#D6EEF9", logoUrl: "assets/logo/lunacy.jpeg" },
         ],
     };
 
-
-    function animateProgressBars(skillCategory) {
-        const container = document.getElementById(skillCategory + 'Container');
-        const progressBars = container.querySelectorAll('.progress');
-        const progressPercentages = container.querySelectorAll('.progressPercentage');
-        const skillItems = skills[skillCategory];
-
-        progressBars.forEach((progressBar, index) => {
-            // Reset progress bar and percentage text to 0% before animation starts
-            progressBar.style.width = '0%';
-            progressPercentages[index].textContent = '0%';
-
-            const skillPercentage = skillItems[index]?.percentage;
-            if (skillPercentage !== undefined) {
-                let currentPercentage = 0;
-                const interval = setInterval(() => {
-                    if (currentPercentage < skillPercentage) {
-                        currentPercentage++;
-                        progressBar.style.width = `${currentPercentage}%`;
-                        progressPercentages[index].textContent = `${currentPercentage}%`;
-                    } else {
-                        clearInterval(interval); // Stop the animation when it reaches the target percentage
-                    }
-                }, 10); // Adjust this number for speed of animation
-            }
-        });
-    }
-
-    // Function to generate skill HTML
-    function generateSkillsTab(skillCategory, containerId) {
+    // Generate skill cards with circular progress
+    function generateSkills(category, containerId) {
         const container = document.getElementById(containerId);
-        container.innerHTML = ''; // Clear previous content
+        if (!container) return;
 
-        skills[skillCategory].forEach(skill => {
-            // Create the skill box
-            const skillBox = `
-                <div class="box">
-                    <div class="icon">
-                        <img src="${skill.logoUrl}" alt="${skill.name}">
-                    </div>
-                    <div class="progressContainer">
-                        <span class="skillTitle">${skill.name}</span>
-                        <div class="progressBar" style="background-color:${skill.lightColor};">
-                            <div class="progress" style="background-color:${skill.color}; width: 0;"></div>
-                        </div>
-                        <div class="progressPercentage" data-percentage="${skill.percentage}">0%</div>
-                    </div>
+        container.innerHTML = '';
+
+        skills[category].forEach(skill => {
+            const card = document.createElement('div');
+            card.className = 'skill-card';
+
+            const circumference = 2 * Math.PI * 52; // r = 52
+            const offset = circumference * (1 - skill.percentage / 100);
+
+            card.innerHTML = `
+              
+                <div class="progress-ring">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                        <circle class="ring" cx="60" cy="60" r="52"
+                            stroke="${skill.color}"
+                            stroke-dasharray="${circumference}"
+                            stroke-dashoffset="${circumference}"
+                            data-offset="${offset}">
+                        </circle>
+                    </svg>
+                    <div class="progress-value">${skill.percentage}%</div>
                 </div>
+                <div class="skill-title">${skill.name}</div>
+                <div class="skill-level">${getLevelText(skill.percentage)}</div>
             `;
-            // Append the skill box to the container
-            container.innerHTML += skillBox;
-        });
 
-        // Call animateProgressBars to animate the progress bars after they are added to the DOM
-        setTimeout(() => animateProgressBars(skillCategory), 200);
+            container.appendChild(card);
+        });
     }
 
-    // Function to initialize tab navigation
-    function setupTabNavigation() {
-        const tabs = document.querySelectorAll('.skillsBtn div');
-        const skillSections = document.querySelectorAll('.skills');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetSection = tab.id.split('-')[0]; // Extract frontend, backend, tools
-                skillSections.forEach(section => {
-                    if (section.classList.contains(targetSection)) {
-                        // section.classList.add('display-block');
-                        section.classList.remove('display-none');
-                        animateProgressBars(targetSection);
-                    } else {
-                        // section.classList.remove('display-block');
-                        section.classList.add('display-none');
-                    }
-                });
-            });
-        });
-
+    function getLevelText(percent) {
+        if (percent >= 90) return "Expert";
+        if (percent >= 80) return "Advanced";
+        if (percent >= 70) return "Proficient";
+        if (percent >= 60) return "Intermediate";
+        return "Learning";
     }
 
-    // Generate skills content dynamically when the DOM is loaded
-    generateSkillsTab('frontend', 'frontendContainer');
-    generateSkillsTab('backend', 'backendContainer');
-    generateSkillsTab('programming', 'programmingContainer');
-    generateSkillsTab('tools', 'toolsContainer');
-    setupTabNavigation();
+    // Animate all visible rings
+    function animateRings() {
+        document.querySelectorAll('.skills-tab.active .ring').forEach(ring => {
+            const targetOffset = ring.dataset.offset;
+            ring.style.strokeDashoffset = targetOffset;
+        });
+    }
 
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.skills-tab').forEach(t => t.classList.remove('active'));
 
+            btn.classList.add('active');
+            const tabId = btn.dataset.tab;
+            document.getElementById(tabId).classList.add('active');
+
+            // Animate rings after tab change
+            setTimeout(animateRings, 100);
+        });
+    });
+
+    // Generate content
+    generateSkills('frontend', 'frontendContainer');
+    generateSkills('backend', 'backendContainer');
+    generateSkills('programming', 'programmingContainer');
+    generateSkills('tools', 'toolsContainer');
+
+    // First animation on load
+    setTimeout(animateRings, 600);
+// });
     // nav
     const hamburger = document.getElementById('hamburger');
     const overlay = document.getElementById('overlay');
@@ -229,5 +218,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
 
+  // Observe stats cards
+  document.querySelectorAll('.stat-card').forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = `opacity 0.6s ease, transform 0.6s ease ${0.5 + index * 0.1}s`;
+    observer.observe(card);
+  });
+
+  // Observe stats section
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) {
+    statsSection.style.opacity = '0';
+    statsSection.style.transform = 'translateY(30px)';
+    statsSection.style.transition = 'opacity 0.8s ease, transform 0.8s ease 0.4s';
+    observer.observe(statsSection);
+  }
+
+  // Force initial visible elements (fallback)
+  setTimeout(() => {
+    const hero = document.querySelector('.hero');
+    const profile = document.querySelector('.profile-card');
+    const about = document.querySelector('.about-content');
+
+    if (hero)    { hero.style.opacity = '1';    hero.style.transform = 'translateY(0)'; }
+    if (profile) { profile.style.opacity = '1'; profile.style.transform = 'translateX(0)'; }
+    if (about)   { about.style.opacity = '1';   about.style.transform = 'translateX(0)'; }
+  }, 100);
+});
