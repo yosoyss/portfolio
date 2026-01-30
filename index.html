@@ -84,56 +84,143 @@
     <!--banner ends here  -->
 
     <!-- About me starts here -->
-    <div id="aboutCont">
-        <div class="aboutImage">
-            <img src="assets/background/Resume-bro.png" alt="" srcset="">
+
+    <div class="container">
+
+        <!-- <div class="blob blob-1"></div> -->
+        <!-- <div class="blob blob-2"></div> -->
+        <div class="hero">
+            <h1>Creative Developer & <span>Designer</span></h1>
+            <p>Building beautiful digital experiences through clean code and thoughtful design</p>
         </div>
 
-        <!-- about para -->
-        <div class="aboutMe">
-            <h2>About Me</h2>
-            <p>I’m passionate about web design and development, with a solid foundation in HTML, CSS, JavaScript, PHP,
-                and MySQL. I enjoy creating visually appealing, user-friendly websites and have experience in both
-                front-end design and some back-end development. Alongside web technologies, I also work with other
-                programming languages, including Python and Node.js, which broaden my skills and approach to
-                problem-solving.</p>
+        <div class="grid">
+            <div class="profile-card">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                    </div>
+                    <div class="terminal-path">~ portfolio</div>
+                </div>
+                <div class="terminal-content">
+                    <div class="profile-img-container">
+                        <img src="assets/background/Resume-bro.png" alt="Profile" class="profile-img">
+                    </div>
 
-            <p> In addition to coding, I have a strong background in graphic design, with skills in Adobe Photoshop and
-                Illustrator. I love blending creativity with technical expertise to deliver polished, professional
-                results. I’m always eager to learn, improve, and take on projects that challenge me to grow as a
-                developer and designer.</p>
+                    <div class="terminal-text">
+                        <div>
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">whoami</span>
+                        </div>
+                        <div class="terminal-response">
+                            Full-Stack Developer • Visual Designer
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="section-title">
+                    <div class="title-bar"></div>
+                    <h2>About Me</h2>
+                </div>
+
+                <div class="about-text">
+                    <p>
+                        I'm passionate about web design and development, with a solid foundation in HTML, CSS,
+                        JavaScript, PHP, and MySQL. I enjoy creating visually appealing, user-friendly websites...
+                    </p>
+                    <p>
+                        In addition to coding, I have a strong background in graphic design, with skills in Adobe
+                        Photoshop and Illustrator...
+                    </p>
+                </div>
+            </div>
         </div>
 
+        <div class="stats-section">
+            <div class="stats-title">
+                <div class="stats-bar"></div>
+                <h2>Professional Highlights</h2>
+                <div class="stats-bar"></div>
+            </div>
+            <p>A snapshot of my experience and capabilities developed over years of professional work</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                    <div class="stat-underline"></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                    <div class="stat-underline"></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Adobe </div>
+                    <div class="stat-label">Design Tools</div>
+                    <div class="stat-underline"></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Full-Stack </div>
+                    <div class="stat-label">Development Range</div>
+                    <div class="stat-underline"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="decorative-line"></div>
     </div>
+
     <!-- About me ends here -->
 
     <!--  Skills Sections Starts here-->
-    <div id="skillsContainer">
-        <!-- <div class="skillsTitle"> -->
+    <!-- ====================== SKILLS SECTION ====================== -->
+    <section class="skills-section" id="skills">
+        <div class="container">
 
-        <h1>My Expertise</h1>
+            <div class="section-header">
+                <h2>Skills & Expertise</h2>
+                <p>Core competencies — continuously improving and applying in real projects</p>
+            </div>
 
-        <p id="skillpara">As a web developer, I specialize in building efficient, dynamic, and user-centered websites
-            and applications. I focus on creating seamless experiences, from front-end design to back-end functionality,
-            always aiming to improve my skills and stay ahead of the curve in web development.</p>
+            <!-- Tabs -->
+            <div class="skills-tabs">
+                <button class="tab-btn active" data-tab="frontend">Frontend</button>
+                <button class="tab-btn" data-tab="backend">Backend</button>
+                <button class="tab-btn" data-tab="programming">Programming</button>
+                <button class="tab-btn" data-tab="tools">Tools & Design</button>
+            </div>
 
+            <!-- Tab contents -->
+            <div class="skills-content">
 
-        <!-- buttons for skills -->
-        <div class="skillsBtn">
-            <div id="frontend-button">Front-End</div>
-            <div id="backend-button">Back-End</div>
-            <div id="programming-button">Programming</div>
-            <div id="tools-button">Tools</div>
+                <!-- Frontend -->
+                <div class="skills-tab active" id="frontend">
+                    <div class="skills-grid" id="frontendContainer"></div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skills-tab" id="backend">
+                    <div class="skills-grid" id="backendContainer"></div>
+                </div>
+
+                <!-- Programming (C, C++) -->
+                <div class="skills-tab" id="programming">
+                    <div class="skills-grid" id="programmingContainer"></div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skills-tab" id="tools">
+                    <div class="skills-grid" id="toolsContainer"></div>
+                </div>
+
+            </div>
         </div>
-
-        <!-- </div> -->
-        <!-- skills Section -->
-        <div class="skills frontend" id="frontendContainer"></div>
-        <div class="skills backend display-none" id="backendContainer"></div>
-        <div class="skills programming display-none" id="programmingContainer"></div>
-        <div class="skills tools display-none" id="toolsContainer"></div>
-
-    </div>
+    </section>
     <!-- Skills sections ends here -->
 
     <!-- my projects section starts here -->
@@ -168,6 +255,17 @@
             </div>
 
             <div class="project-box">
+                <a href="https://gelato.glovix.n/" target="_blank">
+                    <img src="assets/background/compiler.avif" alt="" srcset="">
+
+                    <div class="project-data">
+                        <div class="project-title">Gelato</div>
+                        <div class="project-lang">Web + PHP</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- <div class="project-box">
                 <a href="https://createresumeonline.netlify.app/" target="_blank">
                     <img src="assets/background/resume.jpeg" style="background : #eee; border-bottom: 1px solid black"
                         alt="" srcset="">
@@ -177,7 +275,7 @@
                         <div class="project-lang">Web</div>
                     </div>
                 </a>
-            </div>
+            </div> -->
 
             <div class="project-box">
                 <a href="https://calcsolver.netlify.app/" target="_blank">
