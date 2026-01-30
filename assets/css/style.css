@@ -29,6 +29,7 @@ body {
     bottom: 8%;
     right: 1.5%;
     color: #FFF;
+    z-index: 999;
     background-color: var(--secondary-color);
 }
 
